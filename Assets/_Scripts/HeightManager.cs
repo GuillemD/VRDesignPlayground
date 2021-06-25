@@ -10,7 +10,7 @@ public class HeightManager : MonoBehaviour
 
     private float minY = 1.0f;
     private float maxY = 3.0f;
-    private float step = 0.1f;
+    private float step = 0.01f;
 
     
     // Start is called before the first frame update

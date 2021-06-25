@@ -54,6 +54,7 @@ public class CustomThrowSystem : MonoBehaviour
 
             if (TriggerPressed(controller) && objectGrabbed && objects.Count > 0)
             {
+                
                 foreach(GameObject go in objects)
                 {
                     if(go.GetComponent<Rigidbody>())
@@ -62,7 +63,7 @@ public class CustomThrowSystem : MonoBehaviour
                         rb.isKinematic = false;
                         rb.useGravity = true;
                         
-                        rb.AddRelativeForce(new Vector3(0,1,1 * ThrowForce), ForceMode.Impulse);
+                        rb.AddForce(controller.transform.forward * ThrowForce, ForceMode.Impulse);
                     }
                     go.transform.parent = null;
                     objectGrabbed = false;
